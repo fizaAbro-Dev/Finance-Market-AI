@@ -2,7 +2,11 @@ from flask import Flask, render_template, jsonify
 import json
 import os
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="../templates",
+    static_folder="../static"
+)
 
 # -------------------------
 # Home Route (Dashboard UI)
