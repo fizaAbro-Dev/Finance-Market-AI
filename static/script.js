@@ -45,6 +45,14 @@ function fmtPrice(key, price) {
 
 // ── Init ──────────────────────────────────────────
 window.onload = () => {
+
+    fetch("http://127.0.0.1:5000/data")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Backend Data:", data);
+  })
+  .catch(err => console.log("Error:", err));
+  
   tick();
   setInterval(tick, 1000);
   renderTicker();
